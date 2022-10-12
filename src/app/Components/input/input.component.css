@@ -45,8 +45,16 @@ width: 37%;
   padding: 1%;
 }
 
+.logo{
+  width: fit-content;
+  height: fit-content;
+}
 
 
+.header-txt{
+  width: fit-content;
+  height: fit-content;
+}
 
 
 
@@ -69,4 +77,8 @@ width: 37%;
 
 mat-radio-button{
   margin-left: 3%;
+}
+
+.header{
+/* display: flex; */
 }

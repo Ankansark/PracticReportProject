@@ -1,5 +1,5 @@
 <div class="main">
-    <div class="left" style="border: solid red;">
+    <div class="left">
         <mat-accordion>
             <mat-expansion-panel class="exp-panel">
                 <mat-expansion-panel-header>
@@ -38,7 +38,7 @@
                     <div class="header-input">
                         <mat-form-field appearance="outline">
                             <mat-label>Color</mat-label>
-                            <input matInput type="color">
+                            <input [(ngModel)]="headerL1Color" matInput type="color">
                         </mat-form-field>
                     </div>
                 </div>
@@ -63,7 +63,7 @@
                     <div class="header-input">
                         <mat-form-field appearance="outline">
                             <mat-label>Color</mat-label>
-                            <input matInput type="color">
+                            <input [(ngModel)]="headerL2Color" matInput type="color">
                         </mat-form-field>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                     <div class="header-input">
                         <mat-form-field appearance="outline">
                             <mat-label>Color</mat-label>
-                            <input matInput type="color">
+                            <input [(ngModel)]="headerL3Color" matInput type="color">
                         </mat-form-field>
                     </div>
                 </div>
@@ -122,10 +122,10 @@
                 </div>
 
                 <div class="inside-exp">
-                    <mat-radio-group class="hori-redio" aria-label="Select an option">
-                        <mat-radio-button value="1">Left</mat-radio-button>
-                        <mat-radio-button value="2">Center</mat-radio-button>
-                        <mat-radio-button value="3">Right</mat-radio-button>
+                    <mat-radio-group [(ngModel)]="logoPosition" class="hori-redio" aria-label="Select an option">
+                        <mat-radio-button value="left">Left</mat-radio-button>
+                        <mat-radio-button value="center">Center</mat-radio-button>
+                        <mat-radio-button value="right">Right</mat-radio-button>
                     </mat-radio-group>
                 </div>
 
@@ -134,10 +134,10 @@
                 </div>
 
                 <div class="inside-exp">
-                    <mat-radio-group class="hori-redio" aria-label="Select an option">
-                        <mat-radio-button value="1">Left</mat-radio-button>
-                        <mat-radio-button value="2">Center</mat-radio-button>
-                        <mat-radio-button value="3">Right</mat-radio-button>
+                    <mat-radio-group [(ngModel)]="HeaderTxtposition" class="hori-redio" aria-label="Select an option">
+                        <mat-radio-button value="Left">Left</mat-radio-button>
+                        <mat-radio-button value="Center">Center</mat-radio-button>
+                        <mat-radio-button value="Right">Right</mat-radio-button>
                     </mat-radio-group>
                 </div>
 
@@ -161,21 +161,37 @@
 
 
 
-    <div class="right" style="border: solid red;">
+    <div class="right">
 
-        <img [src]=url height={{hight}} width={{width}}>
-        Right side div
-        <div class="headerText"  style="border: solid red;">
 
-            <h1 [ngStyle]="{'font-size.px':h1Font}">{{header1}}</h1>
+        <div class="header">
+            <div [ngStyle]="{'float':logoPosition}" class="logo" >
+                <img  [src]=url height={{hight}} width={{width}}>
+            </div>
+            <div [ngStyle]="{'float':HeaderTxtposition}" class="header-txt" >
+
+
+                <div  class="headerText" [ngStyle]="{'font-size.px':h2Font}" >
+                    <h1 [ngStyle]="{'font-size.px':h1Font, 'color':headerL1Color}">{{header1}}</h1>
+                </div>
+
+
+                <div class="headerText" [ngStyle]="{'font-size.px':h2Font}">
+                    <h3 [ngStyle]="{'font-size.px':h2Font, 'color':headerL2Color}">{{header2}}</h3>
+                </div>
+
+
+                <div class="headerText" [ngStyle]="{'font-size.px':h3Font}">
+                    <h4 [ngStyle]="{'font-size.px':h3Font, 'color':headerL3Color}">{{header3}}</h4>
+                </div>
+            </div>
         </div>
-        <div class="headerText" [ngStyle]="{'font-size.px':h2Font}">
 
-            {{header2}}
-        </div>
-        <div class="headerText" [ngStyle]="{'font-size.px':h3Font}">
 
-            {{header3}}
-        </div>
     </div>
 </div>
+
+
+{{logoPosition}}
+
+<!-- <h1 [ngStyle]="{'font-size.px':h1Font}"><img style="float: right;" [src]=url height={{hight}} width={{width}}>{{header1}}</h1> -->
