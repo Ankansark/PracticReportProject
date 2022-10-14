@@ -9,17 +9,30 @@ export class InputComponent implements OnInit {
 
   header1: string
   h1Font: number
+  headerL1Color:any
 
   header2: string
   h2Font: number
+  headerL2Color:any
 
   header3: string
   h3Font: number
+  headerL3Color:any
 
   hight:number
   width:number
 
-  panelOpenState = false;
+  logoPosition:any
+
+  HeaderTxtposition:any
+
+
+
+  lpChange(){
+
+  }
+
+  // panelOpenState = false;
 
   constructor() { }
 

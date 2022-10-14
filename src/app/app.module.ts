@@ -7,11 +7,16 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
-import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 // import { FlexLayoutModule } from "@angular/flex-layout";
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { FormsModule } from '@angular/forms';
+import {MatCardModule} from '@angular/material/card';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 
 
@@ -19,17 +24,16 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ViewComponent } from './Components/view/view.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HomeComponent } from './Components/home/home.component';
-
+import { InputComponent } from './Components/input/input.component';
+import { LoginComponent } from './Components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    InputComponent,
+    LoginComponent
 
-    ViewComponent,
-    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +43,15 @@ import { HomeComponent } from './Components/home/home.component';
     MatFormFieldModule,
     MatRadioModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatIconModule,
+    MatSelectModule,
+    DragDropModule,
+    MatCardModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    HttpClientModule
+
     ],
   providers: [],
   bootstrap: [AppComponent]
